@@ -228,12 +228,10 @@
 
                 echo "<table cellpadding=\"5\" cellspacing=\"5\" align=\"left\" width=\"100%\" border=\"1\">";
                     echo "<tr>";
-                    echo "<td>City</td>";
-                    echo "<td>Mode</td>";
-                    echo "<td>Call Sign</td>";
-                    echo "<td>Frequency</td>";
-                    echo "<td>Offset</td>";
-                    echo "<td>Squelch</td>";
+                    echo "<th>City</td>";
+                    echo "<th>Name</td>";
+                    echo "<th>Rating</td>";
+                    echo "<th>Cost Per Night</td>";
                     echo "</tr>";
                     foreach ($docsArray as $d) {
                         $k--;
@@ -252,17 +250,6 @@
 									removeCandidates($candidateArray, $itemTokensArray);
 									updateCandidates($candidateArray, $oldCandidateArray);
 								}
-
-              //  print_r($candidateArray);
-							//	print_r($oldCandidateArray);
-								echo "The best radio to purchase is your area should support: ";
-								echo "<ul>";
-								$winner = explode(' ', $oldCandidateArray[0]);
-								foreach ($winner as $li){
-									echo "<li>" . $li . "</li>";
-								}
-								echo "</ul>";
-
 
                 fclose( $inFile );
 
