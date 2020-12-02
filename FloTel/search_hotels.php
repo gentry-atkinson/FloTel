@@ -14,6 +14,12 @@
         echo "<td> " . $valueArray[1] . " </td>";
         echo "<td> " . $valueArray[2] . " </td>";
         echo "<td> " . $valueArray[3] . " </td>";
+				echo "<td>
+					<form action=\"./book_hotel.php\" method=\"get\">
+					<input type=hidden name=\"num_people\" value=1>
+					<input type=hidden name=\"num_days\" value=1>
+					<input type=\"submit\" value=\"Book\">
+					</td>";
         echo "</tr>";
     }
 
@@ -138,6 +144,7 @@
                     echo "<th>Name</td>";
                     echo "<th>Rating</td>";
                     echo "<th>Cost Per Night</td>";
+										echo "<th>Book This Hotel</td>";
                     echo "</tr>";
                     foreach ($pool as $p) {
                         printValue($p);
