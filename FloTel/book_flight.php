@@ -12,7 +12,6 @@
 				'num_people' => $_GET['num_people'],
 				'depart' => $_GET['depart'],
 				'price' => $_GET['price'],
-				'price' => $_GET['price'],
 				'fnumber' => $_GET['fnumber']
 			);
 		//print_r($cities);
@@ -53,7 +52,6 @@
     echo "</tr>";
     echo "</table>";
 
-		$candidateArray = array();
     echo "<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />";
 		echo "<a href=\"index.html\"><button type=\"button\">Charge My Card</button></a>";
 		echo "<a href=\"index.html\"><button type=\"button\">Redeem Miles</button></a>";
