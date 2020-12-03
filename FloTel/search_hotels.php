@@ -19,7 +19,8 @@
 					<input type=hidden name=\"num_people\" value=$num_people>
 					<input type=hidden name=\"check_in\" value=$check_in>
 					<input type=hidden name=\"check_out\" value=$check_out>
-					<input type=\"submit\" value=\"Book\">
+					<input type=hidden name=\"price\" value=" . $valueArray[3] . ">" .
+					"<input type=\"submit\" value=\"Book\">
 					</td>";
         echo "</tr>";
     }
