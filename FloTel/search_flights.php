@@ -14,11 +14,13 @@
         echo "<td> " . $valueArray[1] . " </td>";
         echo "<td> " . $valueArray[2] . " </td>";
         echo "<td> " . $valueArray[3] . " </td>";
+				echo "<td> " . $valueArray[4] . " </td>";
+        echo "<td> " . $valueArray[5] . " </td>";
 				echo "<td>
 					<form action=\"./book_hotel.php\" method=\"get\">
 					<input type=hidden name=\"num_people\" value=$num_people>
-					<input type=hidden name=\"depart\" value=" . $depart . ">" .
-					<input type=hidden name=\"price\" value=" . $valueArray[3] . ">" .
+					<input type=hidden name=\"depart\" value=" . $valueArray[2] . ">" .
+					"<input type=hidden name=\"price\" value=" . $valueArray[4] . ">" .
 					"<input type=\"submit\" value=\"Book\">
 					</td>";
         echo "</tr>";
@@ -27,13 +29,6 @@
     class Doc{
         public $value = "";
         public $score = 0.0;
-    }
-
-    function docSort($a, $b){
-        $score = 'score';
-        if ($a->$score == $b->$score) return 0;
-        if ($a->$score < $b->$score) return 1;
-        return -1;
     }
 
     function generateCandidateList($tokenArray, &$candidateArray){
@@ -105,12 +100,12 @@
 				'dep_date' => $_GET['dep_date']
 			);
 		if($formdata['num_people'] >1){
-			echo "<h1>Your best flight from " . $formdata['depart'] . " for " . $formdata['num_people'] . " people</h1>";
+			echo "<h1>Your best flight from " . $formdata['origin'] . " for " . $formdata['num_people'] . " people</h1>";
 		}
 		else{
-			echo "<h1>Your best hotels in " . $formdata['depart'] . " for 1 person</h1>";
+			echo "<h1>Your best flight from " . $formdata['origin'] . " for 1 person</h1>";
 		}
-		$cities = explode(',', $formdata['city']);
+		$cities = explode(',', $formdata['origin']);
                 foreach ($cities as &$c){
                     $c = strtoupper(trim($c, " "));
                 }
@@ -123,7 +118,7 @@
 		while(! feof($inFile)) {
 			$candidate = fgets($inFile);
 			$candidateLocation = explode(',', $candidate)[0];
-			//print_r($candidate . "\n");
+			//print_r($candidateLocation . "\n");
 			if (in_array(strtoupper(trim($candidateLocation, " ")), $cities)){
           array_push($pool, $candidate);
       }
@@ -141,14 +136,16 @@
 
                 echo "<table cellpadding=\"5\" cellspacing=\"5\" align=\"left\" width=\"100%\" border=\"1\">";
                     echo "<tr>";
-                    echo "<th>City</td>";
-                    echo "<th>Name</td>";
-                    echo "<th>Rating</td>";
-                    echo "<th>Cost Per Night</td>";
-										echo "<th>Book This Hotel</td>";
+                    echo "<th>Origin</td>";
+                    echo "<th>Destination</td>";
+                    echo "<th>Date</td>";
+                    echo "<th>Time</td>";
+										echo "<th>Price</td>";
+										echo "<th>Airline</td>";
+										echo "<th>Book This Flight</td>";
                     echo "</tr>";
                     foreach ($pool as $p) {
-                        printValue($p, $formdata['num_people'], $formdata['check_in'], $formdata['check_out']);
+                        printValue($p, $formdata['num_people']);
                     }
                 echo "</table>";
 
