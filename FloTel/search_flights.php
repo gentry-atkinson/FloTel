@@ -17,10 +17,11 @@
 				echo "<td> " . $valueArray[4] . " </td>";
         echo "<td> " . $valueArray[5] . " </td>";
 				echo "<td>
-					<form action=\"./book_hotel.php\" method=\"get\">
+					<form action=\"./book_flight.php\" method=\"get\">
 					<input type=hidden name=\"num_people\" value=$num_people>
 					<input type=hidden name=\"depart\" value=" . $valueArray[2] . ">" .
 					"<input type=hidden name=\"price\" value=" . $valueArray[4] . ">" .
+					"<input type=hidden name=\"fnumber\" value=" . $valueArray[6] . ">" .
 					"<input type=\"submit\" value=\"Book\">
 					</td>";
         echo "</tr>";

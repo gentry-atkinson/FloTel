@@ -17,6 +17,8 @@
 		//print_r($cities);
 
 		$filename = "BOOKED_HOTELS.csv";
+		if($formdata['num_people'] >1) $np = $formdata['num_people'];
+		else $np = 1;
 		//$outFile = fopen( $filename, "w+");
 		echo "<h1>Hotel Booked</h1>";
 
@@ -27,11 +29,7 @@
     echo "<table cellpadding=\"5\" cellspacing=\"5\" align=\"left\" width=\"20%\" border=\"1\">";
     echo "<tr>";
     echo "<td>Guests</td>";
-		echo "<td>". $formdata['num_people'] . "</td>";
-    echo "</tr>";
-		echo "<tr>";
-    echo "<td>Nights</td>";
-		echo "<td>" . "3"  . "</td>";
+		echo "<td>". $np . "</td>";
     echo "</tr>";
 		echo "<tr>";
     echo "<td>Check In:</td>";
