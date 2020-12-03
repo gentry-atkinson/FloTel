@@ -54,7 +54,9 @@
     echo "</table>";
 
 		$candidateArray = array();
-    echo "<br /><br /><br /><br /><br /><br /><br /><br />";
+    echo "<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />";
+		echo "<a href=\"index.html\"><button type=\"button\">Charge My Card</button></a>";
+		echo "<a href=\"index.html\"><button type=\"button\">Redeem Miles</button></a>";
 		echo "<br /><br /><hr /><br /><br />";
 		echo "<center><a href=\"index.html\"><img src=\"imgs/blue_logo.png\" /></a></center>";
 
