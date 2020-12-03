@@ -7,7 +7,7 @@
 <body style="background-color: #E9E9EF">
 
 	<?php
-    function printValue($doc){
+    function printValue($doc, $num_people, $check_in, $check_out){
         $valueArray = explode(',', $doc);
         echo "<tr> ";
         echo "<td> " . $valueArray[0] . " </td>";
@@ -16,8 +16,9 @@
         echo "<td> " . $valueArray[3] . " </td>";
 				echo "<td>
 					<form action=\"./book_hotel.php\" method=\"get\">
-					<input type=hidden name=\"num_people\" value=1>
-					<input type=hidden name=\"num_days\" value=1>
+					<input type=hidden name=\"num_people\" value=$num_people>
+					<input type=hidden name=\"check_in\" value=$check_in>
+					<input type=hidden name=\"check_out\" value=$check_out>
 					<input type=\"submit\" value=\"Book\">
 					</td>";
         echo "</tr>";
@@ -147,7 +148,7 @@
 										echo "<th>Book This Hotel</td>";
                     echo "</tr>";
                     foreach ($pool as $p) {
-                        printValue($p);
+                        printValue($p, $formdata['num_people'], $formdata['check_in'], $formdata['check_out']);
                     }
                 echo "</table>";
 
