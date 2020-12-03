@@ -155,7 +155,8 @@
 
 								$candidateArray = array();
                 echo "<br /><br /><br /><br /><br /><br /><br /><br />";
-								echo "<a href=\"index.html\"><button type=\"button\">Home</button></a>";
+								echo "<br /><br /><hr /><br /><br />";
+								echo "<center><a href=\"index.html\"><img src=\"imgs/blue_logo.png\" /></a></center>";
 
                 fclose( $inFile );
 

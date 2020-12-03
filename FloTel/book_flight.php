@@ -21,7 +21,9 @@
 		if($formdata['num_people'] >1) $np = $formdata['num_people'];
 		else $np = 1;
 		//$outFile = fopen( $filename, "w+");
-		echo "<h1>Hotel Booked</h1>";
+		echo "<img src=\"imgs/red_blue_logo.png\" />";
+		echo "<h1>Flight Booked</h1>";
+		echo "<h4>Save this receipt for your records</h4>";
 
 		//$d1 = date_create($formdata['check_in']);
 	 	//$d2 = date_create($formdata['check_out']);
@@ -53,7 +55,8 @@
 
 		$candidateArray = array();
     echo "<br /><br /><br /><br /><br /><br /><br /><br />";
-		echo "<a href=\"index.html\"><button type=\"button\">Home</button></a>";
+		echo "<br /><br /><hr /><br /><br />";
+		echo "<center><a href=\"index.html\"><img src=\"imgs/blue_logo.png\" /></a></center>";
 
     //fclose( $outFile );
 
