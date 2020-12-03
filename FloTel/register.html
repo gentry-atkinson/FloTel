@@ -6,22 +6,35 @@
 </head>
 <body style="background-color: #E9E9EF">
 
+<img src="imgs/banner.png" />
 <h1>Register</h1>
 <h4>Enter your personal information to create an account: </h4>
 
 
-<form action="./search_stations.php" method="get">
+<form action="./create_account.php" method="get">
     <table>
         <tr>
             <td>Name:</td>
-            <td><input type="text" name="location" size="80"></td>
+            <td><input type="text" name="name" size="80"></td>
         </tr>
         <tr>
-            <td>Address:</td>
-            <td><input type="text" name="station_type" size="80"></td>
+            <td>Username:</td>
+            <td><input type="text" name="username" size="80"></td>
         </tr>
         <tr>
-            <td><input type="submit" value="Search"></td>
+            <td>Password:</td>
+            <td><input type="password" name="password" size="80"></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="text" name="email" size="80"></td>
+        </tr>
+        <tr>
+            <td>Credit Card Number:</td>
+            <td><input type="text" name="email" size="80"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Create Account"></td>
         </tr>
 
     </table>
